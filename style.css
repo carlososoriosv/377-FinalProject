@@ -6,6 +6,11 @@ body {
     font-family: 'Cabin', sans-serif;
   }
   
+  #main-container{
+    display: flex;
+   }
+   
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
   }
@@ -164,19 +169,98 @@ body {
   }
 
 
- 
+ #main-container{
+  display: flex;
+ }
  
 
   
   #content-container {
-    background: #121212; /* Darker color than the background */
-    border-radius: 10px; /* Round corners */
-    margin: 20px; /* Adjust as needed */
-    padding: 20px; /* Same padding as the text */
-    text-align: center; /* Center the content */
+    display: flex;
+    background: #121212; 
+    border-radius: 10px; 
+    margin: 20px; 
+    padding: 20px;
+    text-align: center; 
+    
   }
-  
+
+
+    
+  #content-container2 {
+    background: red; 
+    border-radius: 10px; 
+    margin: 20px; 
+    padding: 20px; 
+    text-align: center; 
+  }
+
+
+  #content-container,
+#content-container2 {
+  flex: 1;
+  background: #121212;
+  border-radius: 10px; 
+  margin: 20px; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+#content-container2{
+  font-family: 'Roboto', sans-serif;
+}
+
+
   #additional-content {
-    /* Other content styles go here */
   }
   
+
+
+
+  .anime-button {
+    background: #3d05dd;
+    border: 1px solid #3d05dd;
+    border-radius: 6px;
+    box-shadow: whitesmoke;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin-right: 10px; 
+    margin-top: 10px; 
+  }
+  
+  
+  .anime-button:hover,
+  .anime-button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #c81d77;
+  }
+  
+  .anime-button:active {
+    opacity: .5;
+  }
+
+  #content-container2 p{
+    font-size: 40px;
+    color: #c81d77;
+  }
+
+  #content-container2 img{
+    height: 140px;
+  }
