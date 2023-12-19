@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamburger Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Roboto:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://getwallpapers.com/wallpaper/full/5/8/b/745877-download-anime-desktop-backgrounds-1920x1080-ipad.jpg');
+      margin: 15;
+    padding: 15;
+    
+    color: Red;
+    font-family: 'Cabin', sans-serif;
+    }
+    #main-container{
+    display: flex;
+   }
+   
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  #manganime-heading {
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  #menuToggle {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  #menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+  }
+  
+  #menuToggle a:hover {
+    color: tomato;
+  }
+  
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+  }
+  
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+  
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+  
+  #menuToggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+  
+  #menu {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 50px;
+    background: #fff;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  
+  #menu li {
+    color: #3d05dd;
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  #menu li:hover {
+    color: #c81d77;
+  }
+  
+  #menuToggle a {
+    color: #3d05dd;
+    padding: 10px 0;
+    font-size: 22px;
+  }
+  
+  #menuToggle a:hover {
+    color: #c81d77; 
+  }
+
+
+  #menuToggle input:checked ~ #menu {
+    transform: none;
+  }
+  
+  #content {
+    padding: 20px;
+    padding-left: 140px;
+    transition: padding-left 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    background: linear-gradient(to right, #c81d77, #6710c2);
+    color: transparent; 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+  }
+  
+  #content h1{
+    font-size: 5em;
+  }
+
+  #content h2{
+    font-size: 2em;
+  }
+
+
+  #contentSecond {
+    padding: 20px;
+    padding-left: 140px;
+    transition: padding-left 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    background: linear-gradient(to right, #adfda2, #6710c2);
+    color: transparent; 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+  }
+  
+  #contentSecond h1{
+    font-size: 3em;
+  }
+
+  #contentSecond h2{
+    font-size: 1.5em;
+  }
+
+
+ #main-container{
+  display: flex;
+ }
+ 
+
+  
+  #content-container {
+    display: flex;
+    background: #121212; 
+    border-radius: 10px; 
+    margin: 20px; 
+    padding: 20px;
+    text-align: center; 
+    
+  }
+
+
+    
+  #content-container2 {
+    background: red; 
+    border-radius: 10px; 
+    margin: 20px; 
+    padding: 20px; 
+    text-align: center; 
+  }
+
+
+  #content-container,
+#content-container2 {
+  flex: 1;
+  background: #121212;
+  border-radius: 10px; 
+  margin: 20px; 
+  padding: 20px; 
+  text-align: center; 
+}
+
+#content-container2{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+  #additional-content {
+  }
+  
+
+
+
+  .anime-button {
+    background: #3d05dd;
+    border: 1px solid #3d05dd;
+    border-radius: 6px;
+    box-shadow: whitesmoke;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    margin-right: 10px; 
+    margin-top: 10px; 
+  }
+  
+  
+  .anime-button:hover,
+  .anime-button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #c81d77;
+  }
+  
+  .anime-button:active {
+    opacity: .5;
+  }
+
+  #content-container2 p{
+    font-size: 40px;
+    color: #c81d77;
+  }
+
+  #content-container2 img{
+    height: 140px;
+  }
+    </style>
+</head>
+<body>
+
+  <div id="menuToggle">
+    <input type="checkbox">
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <ul id="menu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="docu.html">documentation</a></li>
+    </ul>
+  </div>
+
+  <div id="contentSecond">
+    <h1><strong>Anime Quotes</strong></h1>
+    <p><strong>Here you'll find some of the best anime APIs.</strong></p>
+  </div>
+
+  <div id="content-container"style="border: 1px solid black; padding: 10px; margin: 10px; width: 450px; align-content: center;">
+  <p id="quote"></p> <p id="character"></p> <p id="anime"></p>
+</div>
+    <div id="additional-content">
+      <div id="apiResponse"></div>
+    </div>
+  </div>
+
+  <script src="script.js">
+
+  </script>
+
+  <script>
+    fetch('https://animechan.xyz/api/random')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('quote').innerHTML = data.quote;
+        const characterElement = document.getElementById('character'); 
+          characterElement.textContent = `character: ${data.character}`;
+          const animeElement = document.getElementById('anime');
+          animeElement.textContent=`anime: ${data.anime}`;  
+      });
+  </script>
+</body>
+</html>
