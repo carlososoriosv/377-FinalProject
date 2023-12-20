@@ -1,0 +1,30 @@
+<html>
+<head>
+    <style>
+        header, footer, body {
+            background-color: rgb(47, 130, 255);
+        }
+    </style>
+    <title>Success Form Page</title>
+</head>
+<body>
+    <h1>Thanks for submitting, we will reach out soon!</h1>
+    <h2>You will be redirected to the Homepage within the next 10 seconds. If not, please click the Home page Icon below to be redirected</h2>
+
+    <a href="index.html">
+        <img src="home.png" alt="Home Icon" style="width: 200px;">
+    </a>
+
+    <script>
+        // The function that runs when the window loads
+        window.onload = function() {
+            // Set a timeout function that will run after 5 seconds 
+            setTimeout(function(){
+                // Redirect the user to the home page after the timeout
+                window.location.href = 'index.html'; 
+            }, 5000);
+        }
+    </script>
+    
+</body>
+</html>
