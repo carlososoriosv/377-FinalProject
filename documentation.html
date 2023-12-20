@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamburger Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Roboto:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="menuToggle">
+    <input type="checkbox">
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <ul id="menu">
+        <li><a href="index.html">home</a></li>
+        <li><a href="about.html">about</a></li>
+        <li><a href="quotes.html">aniQuotes</a></li>
+        
+    </ul>
+  </div>
+
+  <div id="contentSecond">
+    <h1>Documentation</h1>
+      <h2>Overview</h2>
+      <p>This website is designed for anime enthusiasts, providing a unique platform to explore various anime series. The website offers the following features:</p>
+  
+      <h2>Anime Quotes</h2>
+      <p>This feature displays random quotes from various anime series. It uses the <a href="https://animechan.xyz/">AnimeChan API</a> to fetch the quotes.</p>
+      <h3>Usage</h3>
+      <p>Simply visit the Anime Quotes page on our website. A random quote from an anime series will be displayed. Refresh the page to view a new quote.</p>
+  
+      <h2>Anime Rankings</h2>
+      <p>This feature provides up-to-date rankings of anime series. It uses the <a href="https://rapidapi.com/felixeschmittfes/api/myanimelist">MyAnimeList API</a> to fetch the rankings.</p>
+      <h3>Usage</h3>
+      <p>Visit the Anime Rankings page on our website. The page displays a list of anime series ranked according to their ratings.</p>
+  
+      <h2>Voice Commands</h2>
+      <p>This feature allows users to navigate the website using voice commands. It uses the Annyang library to implement this feature.</p>
+      <h3>Usage</h3>
+      <p>To use voice commands, click on the microphone icon on the website. Once activated, you can use voice commands to navigate through the website, search for anime, and much more.</p>
+
+      <h2> Anime Background Citation</h2>
+      <p><a href = "https://getwallpapers.com/image/eyJpdiI6IkE4QUU3QVdWVEFwYlp3dkk1S3lqZVE9PSIsInZhbHVlIjoiNnVoTzIzYVJtM0t4eUN6cTdianhyUT09IiwibWFjIjoiZGRlMWM0ZTdmYzE1ZDg2MTM3Y2IxNTU4YWZiYjA2Y2Y2MzI5NDJjOTVlYzRhM2I4ZWNmZjYwZDI2ZWExYjE2ZiJ9">Background</a> to fetch anime backgrounds.</p>
+      <h2> Supabase Table</h2>
+      <p> Supabase was used to fetch table data and uses the contact form to obtain data from users and input it into the supabase table.</p>
+      <h2>Conclusion</h2>
+      <p>This website aims to provide a unique and interactive platform for anime enthusiasts. We hope you enjoy using it!</p>
+
+  </div>
+
+  <div id="content-container">
+    <div id="additional-content">
+      <div id="apiResponse"></div>
+    </div>
+  </div>
+  <div id="audioInstructions">
+    <h1> In this web page there are options to Navigate using Audio!</h1>
+    <p>Ensure your Mic is enabled to be able to use this feature</p>
+  
+    <ul>
+        <li>Navigate to a Different Page
+            <ul>
+                <li>Say: <strong>Navigate to "page" </strong></li>
+            </ul>
+            <li>Change the Page Color
+              <ul>
+                  <li>Say: <strong>Change the color to "color"</strong> </li>
+              </ul>
+              <li>Say Hello Back to you!
+                <ul>
+                    <li>Say: <strong>Hello </strong></li>
+                </ul>
+        </li>
+    </ul>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <script src="voice_script.js"></script>
+</body>
+</html>

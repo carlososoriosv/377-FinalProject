@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1/dist/umd/supabase.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hamburger Menu</title>
@@ -19,21 +20,130 @@
     <ul id="menu">
         <li><a href="index.html">home</a></li>
         <li><a href="quotes.html">aniQuotes</a></li>
-        <li><a href="docu.html">documentation</a></li>
+        <li><a href="documentation.html">documentation</a></li>
     </ul>
   </div>
 
   <div id="contentSecond">
     <h1>Wanna know more about us?</h1>
-    <p>Here you'll find some of the best anime APIs.</p>
+    <p>Here you'll find some of the best anime quotes and rankings. </p>
   </div>
+    <h1>About Our Website</h1>
+    <p>
+        Welcome to our website! We are dedicated to all anime enthusiasts out there. Our website offers a unique experience where you can explore your favorite anime in a whole new way.
+    </p>
+    <h2>Anime Quotes</h2>
+    <p>
+        We use an API from <a href="https://animechan.xyz/">AnimeChan</a> to display random quotes from various anime series. It's a fun way to recall memorable moments from your favorite shows or discover new ones to watch.
+    </p>
+    <h2>Anime Rankings</h2>
+    <p>
+        Want to know how your favorite anime ranks among others? We've got you covered. We use the <a href="https://rapidapi.com/felixeschmittfes/api/myanimelist">MyAnimeList API</a> to provide up-to-date rankings of anime series. You can see how your favorites stack up against the rest.
+    </p>
+    <h2>Voice Commands</h2>
+    <p>
+        To make navigation easier and more interactive, our website supports voice commands using Annyang. You can browse through the website all with simple voice commands.
+    </p>
+    <p>
+        We hope you enjoy your time here. Happy exploring!
+    </p>
+  <form id="contactForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date"><br>
+    <label for="message">Reason for Contact:</label><br>
+    <textarea id="message" name="message"></textarea><br>
+    <input type="submit" value="Submit">
+</form>
+<div id="audioInstructions">
+  <h1> In this web page there are options to Navigate using Audio!</h1>
+  <p>Ensure your Mic is enabled to be able to use this feature</p>
 
+  <ul>
+      <li>Navigate to a Different Page
+          <ul>
+              <li>Say: <strong>Navigate to "page" </strong></li>
+          </ul>
+          <li>Change the Page Color
+            <ul>
+                <li>Say: <strong>Change the color to "color"</strong> </li>
+            </ul>
+            <li>Say Hello Back to you!
+              <ul>
+                  <li>Say: <strong>Hello </strong></li>
+              </ul>
+      </li>
+  </ul>
+  <button id="turnOn">Turn On</button>
+  <button id="turnOff">Turn Off</button>
+  </div>
+  <script>
+      // Function to validate the form
+      function validateForm() {
+    // Get the value of the message field
+    var message = document.getElementById("message").value;
+    // Regular expression to match alphanumeric characters and spaces
+    var regex = /^[a-zA-Z0-9\s]*$/;
+
+    // Check if the message field is empty
+    if (message == "") {
+        // Alert the user to enter a message
+        alert("Please enter a message.");
+        // Prevent the form from being submitted
+        return false;
+    }
+
+    // Check if the message contains any special characters
+    if (!regex.test(message)) {
+        // Alert the user that the message contains special characters
+        alert("The message contains special characters.");
+        // Prevent the form from being submitted
+        return false;
+    }
+
+    // If validation passes, allow the form to be submitted
+    return true;
+}
+      
+  </script>
   <div id="content-container">
     <div id="additional-content">
       <div id="apiResponse"></div>
     </div>
   </div>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    // Create a single supabase client for interacting with the database
+    var supabaseUrl = 'https://tcxnjgsosxllseyzwjdb.supabase.co';
+    var supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjeG5qZ3Nvc3hsbHNleXp3amRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI5NTQxMTIsImV4cCI6MjAxODUzMDExMn0.MX2wfXu4zb0CM6JitLEY_NYKehN7XJQgPBODDTzwJMI'; // Replace with your Supabase key
+    var supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var date = document.getElementById('date').value;
+
+        // Use the supabase client to insert data into the database
+        supabase
+            .from('visitors')
+            .insert([
+                { name: name, email: email, date: date },
+            ])
+            .then(function(response) {
+                if (response.error) {
+                    console.error(response.error);
+                } else {
+                    console.log('Submitted successfully!');
+                    window.location.href = "success.html";
+                }
+            });
+    });
+</script>
 </body>
 </html>
